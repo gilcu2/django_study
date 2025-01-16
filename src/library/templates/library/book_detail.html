@@ -1,0 +1,13 @@
+{{ book.title }}
+
+Author: {{ book.author.first_name }} {{ book.author.last_name }}
+
+Publication Date: {{ book.publication_date }}
+
+ISBN: {{ book.isbn }}
+
+Publishers:
+{% for publisher in book.publishers.all %}
+    {{ publisher.name }}
+{% endfor %}
+

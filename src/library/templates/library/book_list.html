@@ -1,0 +1,7 @@
+
+{% for book in books %}
+    href="{% url 'book_detail' book.id %}">{{ book.title }} by {{
+    book.author.first_name }} {{ book.author.last_name }}
+{% endfor %}
+
+<\html>
