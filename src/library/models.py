@@ -14,7 +14,7 @@ class Author(models.Model):
         return f"{self.first_name} {self.last_name}"
 
     def get_books(self):
-        return Book.filter(author=self)
+        return Book.objects.filter(author=self)
 
 
 class Publisher(models.Model):

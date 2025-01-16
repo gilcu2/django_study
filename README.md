@@ -16,3 +16,5 @@ To run all tests and checks:
 pytest
 ```
 
+## Development Pycharm
+- Mark scr as source root and tests and test root 
