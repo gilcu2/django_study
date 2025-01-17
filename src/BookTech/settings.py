@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'library',
     "home",
     "movies",
+    "accounts",
 ]
 
 MIDDLEWARE = [
