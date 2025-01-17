@@ -3,7 +3,12 @@ from .models import Movie
 
 
 def index(request):
-    template_data = {'title': 'Movies', 'movies': Movie.objects.all()}
+    search_term = request.GET.get('search')
+    if search_term:
+        movies = Movie.objects.filter(name__icontains=search_term)
+    else:
+        movies = Movie.objects.all()
+    template_data = {'title': 'Movies', 'movies': movies}
     return render(request, 'movies/index.html', {'template_data': template_data})
 
 
