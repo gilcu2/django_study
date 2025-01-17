@@ -3,7 +3,7 @@ import pytest
 from django.urls import reverse
 from bdd_helper import *
 
-
+@pytest.mark.django_db
 def test_index(client):
     Given("url")
     url = reverse('movies.index')
@@ -13,11 +13,14 @@ def test_index(client):
 
     Then("it is ok")
     assert response.status_code == 200
-    assert "Inception" in str(response.content)
+    content_str = str(response.content)
+    assert "Inception" in content_str
+    assert "Search" in content_str
 
+@pytest.mark.django_db
 def test_show(client):
     Given("url")
-    url = reverse('movies.show',args=[2])
+    url = reverse('movies.show', args=[2])
 
     When("Get response")
     response = client.get(url)
