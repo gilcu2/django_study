@@ -127,5 +127,5 @@ STATICFILES_DIRS = [
     BASE_DIR / 'BookTech/static/',
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, '../data/media')
 MEDIA_URL = '/media/'
